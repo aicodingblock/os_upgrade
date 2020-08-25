@@ -68,6 +68,7 @@ elif [[ "$INSTALL_STEP" = "step3" ]];  then
 	echo 'start step3' >> check_step.txt;
 	sudo apt-get install chromium-browser --yes;
 	sudo pip3 install asyncio;
+	sudo pip3 install bluepy;
 	mkdir /home/pi/os_upgrade/temp;
 	cd temp/;
 	git clone https://github.com/aicodingblock/codingblock.git;
