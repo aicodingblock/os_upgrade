@@ -41,6 +41,7 @@ if [[ "$INSTALL_STEP" = "step1" ]]; then
 	#git check
 	git clone https://github.com/aicodingblock/OS.git;
 	cp ./OS/autostart /home/pi/.config/lxsession/LXDE-pi/ && cp ./OS/version.info /home/pi/;
+	sudo cp ./OS/sources.list /etc/apt/sources.list
 	#dir check
 	sudo mkdir /lib/modules/4.19.127-v7;
 	sudo cp -r ./OS/rootfs/4.19.127-v7/* /lib/modules/4.19.127-v7/;
