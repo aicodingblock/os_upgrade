@@ -3,7 +3,7 @@
 
 ### BEGIN INIT INFO
 # Provides:          AI Coding Pack
-# Writer:				  PHJ
+# Writer:	     PHJ
 # Date:              2020.08
 # Required-Start:    $remote_fs $syslog
 # Required-Stop:     $remote_fs $syslog
