@@ -86,11 +86,12 @@ elif [[ "$INSTALL_STEP" = "step4" ]];  then
 	lxterminal --title="AMK OS Upgrade Step4" -e bash -c "cd /home/pi/os_upgrade/;	
 	echo 'start step4' > check_step.txt;
 	sed -i 's/@lxterminal -e bash \/home\/pi\/os_upgrade\/os_upgrade.sh/ /' /home/pi/.config/lxsession/LXDE-pi/autostart;
+	sleep 2;
 	sudo systemctl enable aimk_auto.service
 	sudo systemctl start aimk_auto.service
 	echo 'OS Upgrade Complete';
 	aplay /home/pi/os_upgrade/temp/codingblock/complete.wav;
-	sleep 3;
+	#sleep 3;
 	cd /home/pi/ && sudo rm -r /home/pi/os_upgrade;
 	cat /home/pi/version.info;
 	bash;"
