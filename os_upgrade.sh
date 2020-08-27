@@ -53,7 +53,7 @@ if [[ "$INSTALL_STEP" = "step1" ]]; then
 	bash"	
 elif [[ "$INSTALL_STEP" = "step2" ]]; then
 	lxterminal --title="AMK OS Upgrade Step2" -e bash -c "cd /home/pi/os_upgrade/;	
-	echo 'start step2' >> check_step.txt;
+	echo 'start step2' > check_step.txt;
 	sudo apt-get update;
 	sudo apt autoremove -y;
 	sudo apt-get install bc -y;
@@ -66,7 +66,7 @@ elif [[ "$INSTALL_STEP" = "step2" ]]; then
 	bash;"
 elif [[ "$INSTALL_STEP" = "step3" ]];  then
 	lxterminal --title="AMK OS Upgrade Step3" -e bash -c "cd /home/pi/os_upgrade/;	
-	echo 'start step3' >> check_step.txt;
+	echo 'start step3' > check_step.txt;
 	sudo apt-get install chromium-browser --yes;
 	sudo pip3 install asyncio;
 	sudo pip3 install bluepy;
@@ -84,7 +84,7 @@ elif [[ "$INSTALL_STEP" = "step3" ]];  then
 	bash"
 elif [[ "$INSTALL_STEP" = "step4" ]];  then
 	lxterminal --title="AMK OS Upgrade Step4" -e bash -c "cd /home/pi/os_upgrade/;	
-	echo 'start step4' >> check_step.txt;
+	echo 'start step4' > check_step.txt;
 	sed -i 's/@lxterminal -e bash \/home\/pi\/os_upgrade\/os_upgrade.sh/ /' /home/pi/.config/lxsession/LXDE-pi/autostart;
 	sudo systemctl enable aimk_auto.service
 	sudo systemctl start aimk_auto.service
