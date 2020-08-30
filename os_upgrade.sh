@@ -74,6 +74,7 @@ elif [[ "$INSTALL_STEP" = "step3" ]];  then
 	cd temp/;
 	git clone https://github.com/aicodingblock/codingblock.git;
 	cd ./codingblock && cp ./Desktop/serial.desktop /home/pi/Desktop && cp ./Desktop/aicodingpack.png /home/pi/Pictures/ ;
+	cp ./Desktop/runBlock.desktop /home/pi/Desktop && cp ./Desktop/블록\ 드라이버\ 업데이트 /home/pi/Desktop;
 	cp ./Desktop/desktop-items-0.conf /home/pi/.config/pcmanfm/LXDE-pi/ ;
 	cp -r ./autorun/py_script/* /home/pi/autorun/py_script/;
 	cp -r ./blockcoding/* /home/pi/blockcoding/kt_ai_makers_kit_block_coding_driver/blockDriver/;
