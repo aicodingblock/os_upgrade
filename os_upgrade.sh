@@ -74,10 +74,19 @@ elif [[ "$INSTALL_STEP" = "step3" ]];  then
 	cd temp/;
 	git clone https://github.com/aicodingblock/codingblock.git;
 	cd ./codingblock && cp ./Desktop/serial.desktop /home/pi/Desktop && cp ./Desktop/aicodingpack.png /home/pi/Pictures/ ;
-	cp ./Desktop/runBlock.desktop /home/pi/Desktop && cp ./Desktop/블록\ 드라이버\ 업데이트 /home/pi/Desktop && ./Desktop/button.desktop /home/pi/Desktop && ./Desktop/button_off.desktop /home/pi/Desktop;
+	cp ./Desktop/runBlock.desktop /home/pi/Desktop && cp ./Desktop/블록\ 드라이버\ 업데이트 /home/pi/Desktop && cp ./Desktop/button.desktop /home/pi/Desktop && cp ./Desktop/button_off.desktop /home/pi/Desktop;
 	cp ./Desktop/desktop-items-0.conf /home/pi/.config/pcmanfm/LXDE-pi/ ;
 	cp -r ./autorun/py_script/* /home/pi/autorun/py_script/;
-	cp -r ./blockcoding/* /home/pi/blockcoding/kt_ai_makers_kit_block_coding_driver/blockDriver/;
+	
+	#remove current blockdriver & install latest version 
+	cd /home/pi/blockcoding/;
+	sudo rm -rf /home/pi/blockcoding/kt_ai_makers_kit_block_coding_driver/;
+	git clone -b release --single-branch https://github.com/aicodingblock/reset_blockdriver.git kt_ai_makers_kit_block_coding_driver;
+	cd kt_ai_makers_kit_block_coding_driver/blockDriver/
+	mkdir key
+	npm install
+	#cp -r ./blockcoding/* /home/pi/blockcoding/kt_ai_makers_kit_block_coding_driver/blockDriver/;
+	cd /home/pi/os_upgrade/temp/codingblock/;
 	mkdir /home/pi/.aicodingblock && mkdir /home/pi/.aicodingblock/bin && cp -r ./aicodingblock/* /home/pi/.aicodingblock/bin;
 	sudo cp ./system_service/*  /lib/systemd/system;
 	sed -i 's/temp_step=\"step3\"/temp_step=\"step4\"/' /home/pi/os_upgrade/os_upgrade.sh;
